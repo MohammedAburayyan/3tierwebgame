@@ -37,7 +37,7 @@ public class samplerestcontroller {
                 userState = "2";
                 return "You have chosen the path of salvation, let the light guide you, \" (type option 1 : FIGHT THE LIGHT) (type option 2 : let the light take control...)\"";
             } else if (message.equals("damnation")) {
-                userState = "2";
+                userState = "3";
                 return "You have chosen the path of damnation, Die as if you had no right to live... unless you reeeaalllly regret your initial choice (type option 1 : SCREW YOUUUUUUUU) (type option 2 : FORGIVE MEEEEE)";
             }
         } else if (userState.equals("2")) {
@@ -48,19 +48,22 @@ public class samplerestcontroller {
                     return "*you throw a punch at the light and it misses terribly* YOU DARE CHALLENGE ME!! I SENTENCE YOU TO ETERNAL DAMNATION!!!!!";
                 } else if (chance >= 70) {
                     userState = "0";
-                    return "*you throw a punch at the light and it acutally hits square in the chin* AHHHHHH IT BURRNNSS DAMNNN YOUUUUUUUUUUU...\" + \"Dungeon Master: dude you got the luckiest roll now I have to readjust the story again!.... lets start from the beginning...";
+                    return "*you throw a punch at the light and it acutally hits square in the chin* AHHHHHH IT BURRNNSS DAMNNN YOUUUUUUUUUUU...\" \"Dungeon Master: dude you got the luckiest roll now I have to readjust the story again!.... lets start from the beginning...";
                 }
-            } else if (message.equals("let the light take control...") || message.equals("2")) {
+            } 
+            else if (message.equals("let the light take control...") || message.equals("2")) {
                 userState = "3";
                 return "*you allow the light into your soul* Ascend and become a true warior!!";
-            } else if (message.equals("SCREW YOUUUUUUUU") || message.equals("1")) {
-                userState = "3";
+            }
+        } else if (userState.equals("3")) {
+            if (message.equals("SCREW YOUUUUUUUU") || message.equals("1")) {
+                userState = "4";
                 return "*you scream SCREW YOU... and it was very anticlimactic* wow that was.... a really dumb choice dude you could have lived... anyways SMYTE!";
             } else if (message.equals("FORGIVE MEEEEE") || message.equals("2")) {
-                userState = "3";
+                userState = "4";
                 return "*you have no spine and beg for forgiveness* yea I thought so, plus I needed new warriors soooo.... ASCEND";
             }
-        } else {
+        }else {
             userState = "0";
             return "I dont know";
         }
